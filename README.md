@@ -32,6 +32,10 @@ It leverages the **LLaMA Pro 8B Instruct** model and was deployed through a **St
 | **Environment** | Windows 11, VS Code, Conda |
 
 ---
+
+## 🧩 Architecture
+
+```mermaid
 flowchart TD
   A[User Input<br/>(Text / Voice)] --> B{Is voice?}
   B -- Yes --> C[Speech-to-Text]
@@ -116,5 +120,4 @@ Data Engineering and Decision Systems | ENET’Com Sfax
 
 © 2025 Oumayma Abassi. All rights reserved.
 
-## 🧩 Architecture
 
