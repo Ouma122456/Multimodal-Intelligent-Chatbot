@@ -32,18 +32,21 @@ It leverages the **LLaMA Pro 8B Instruct** model and was deployed through a **St
 | **Environment** | Windows 11, VS Code, Conda |
 
 ---
-## 🧩 Architecture
-User Input (Text/Voice)
-↓
-Speech-to-Text (if voice)
-↓
-Chatbot Core (LLaMA Pro 8B Instruct)
-↓
-Memory + Personality + Sentiment Modules
-↓
-RAG (Document Retrieval for Context)
-↓
-Response Displayed in Streamlit Interface
+flowchart TD
+  A[User Input<br/>(Text / Voice)] --> B{Is voice?}
+  B -- Yes --> C[Speech-to-Text]
+  B -- No --> D[Text Normalization]
+  C --> E[Chatbot Core<br/>(LLaMA Pro 8B Instruct)]
+  D --> E
+  E --> F[Memory Module]
+  E --> G[Personality Module]
+  E --> H[Sentiment Module]
+  F --> I[RAG<br/>(Document Retrieval / Indexing)]
+  G --> I
+  H --> I
+  I --> J[Response Composition]
+  J --> K[Streamlit Interface<br/>(Display / UX)]
+
 
 ---
 
@@ -108,25 +111,6 @@ Data Engineering and Decision Systems | ENET’Com Sfax
 
 ## 📚 Keywords
 `AI` `Chatbot` `LLM` `Multimodality` `Fine-Tuning` `RAG` `Streamlit` `Speech-to-Text`
-
----
-
-## 🗂️ Repository Structure
-
-├── app/
-│ ├── main.py # Streamlit interface
-│ ├── modules/
-│ │ ├── memory.py
-│ │ ├── sentiment.py
-│ │ ├── speech_to_text.py
-│ │ └── rag.py
-│ ├── model/
-│ │ └── llama_pro_8b.gguf
-│ └── utils/
-│ └── helpers.py
-├── requirements.txt
-├── README.md
-└── LICENSE
 
 ---
 
