@@ -33,27 +33,6 @@ It leverages the **LLaMA Pro 8B Instruct** model and was deployed through a **St
 
 ---
 
-## 🧩 Architecture
-
-```mermaid
-flowchart TD
-  A[User Input<br/>(Text / Voice)] --> B{Is voice?}
-  B -- Yes --> C[Speech-to-Text]
-  B -- No --> D[Text Normalization]
-  C --> E[Chatbot Core<br/>(LLaMA Pro 8B Instruct)]
-  D --> E
-  E --> F[Memory Module]
-  E --> G[Personality Module]
-  E --> H[Sentiment Module]
-  F --> I[RAG<br/>(Document Retrieval / Indexing)]
-  G --> I
-  H --> I
-  I --> J[Response Composition]
-  J --> K[Streamlit Interface<br/>(Display / UX)]
-
-
----
-
 ## 🚀 Features
 
 - **Text and Voice Interaction:** Natural, multimodal communication.
